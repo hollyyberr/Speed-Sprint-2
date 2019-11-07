@@ -1,0 +1,18 @@
+async function startProgram() {
+	setHeading(0);
+	setMainLed({ r: 150, g: 0, b: 255 });
+	await delay(0.5);
+	setSpeed(65);
+	for (var _i0 = 0; _i0 < 5; ++_i0) {
+		await spin(358, 7.7);
+		await spin(-358, 7.7);
+		await delay(0.025);
+	}
+	stopRoll();
+	await delay(2);
+	await speak('I’m the winner', true);
+	await fade({ r: 6, g: 58, b: 255 }, { r: 53, g: 255, b: 11 }, 2);
+	await fade({ r: 108, g: 255, b: 0 }, { r: 255, g: 53, b: 0 }, 2);
+	await fade({ r: 255, g: 12, b: 0 }, { r: 255, g: 0, b: 245 }, 2);
+	await fade({ r: 228, g: 0, b: 255 }, { r: 0, g: 17, b: 255 }, 2);
+}
